@@ -1,0 +1,17 @@
+name: 'Demo Job Level File Access'
+
+on:
+  workflow_dispatch: {}
+
+
+jobs: 
+  create_and_read_file:
+    name: Create and Read File
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write File Content
+        run: |
+          echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." > output.txt
+      - name: Read File Content
+        run: |
+          cat output.txt
